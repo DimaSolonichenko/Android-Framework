@@ -28,8 +28,10 @@ public class CodeDemo {
         policeStation.assignOwner(carTwo, alice);
         policeStation.assignOwner(carThree, bob);
         policeStation.assignOwner(carFour, ben);
-//        policeStation.assignOwner(carFive, susan);
+        policeStation.assignOwner(carSix, susan);
+
     }
+
 
     private void fillPoliceDB(PoliceStation policeStation) {
         carOne.setPlateNumber("AA0000AA");

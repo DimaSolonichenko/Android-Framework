@@ -76,7 +76,7 @@ public class PoliceStation {
     //TODO: make this method return owner of car with plate number
     //TODO: if car not assigned -> exception
     //TODO: add test cases
-    public void printOwnerOfACarWithCertainPlateNumbers(String plateNumber) {
+    public Car printOwnerOfACarWithCertainPlateNumbers(String plateNumber) {
         boolean carIsAvailable = isPlateNumberPresent(availableCars, plateNumber);
         boolean carIsOwned = isPlateNumberPresent(ownedCars.keySet(), plateNumber);
 
@@ -89,10 +89,11 @@ public class PoliceStation {
         }
 
         if (carIsAvailable) {
-            System.out.println(getCarByPlateNumber(availableCars, plateNumber));
+            throw new RuntimeException("Car with  " + plateNumber + " is not assigned");
         } else {
             Car car = getCarByPlateNumber(ownedCars.keySet(), plateNumber);
             System.out.println(ownedCars.get(car));
+            return car;
         }
     }
 
